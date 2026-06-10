@@ -495,6 +495,6 @@ app
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8a910480-565e-42cf-ad59-ed8b08a9c257" />
 
 - Nhấn vào xem chi tiết sẽ hiện nội dung đầy đủ
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/1064fcf5-6991-4be6-b9a2-a0b75839fe3c" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/03e057ab-5c93-4af9-b821-8877a8573d7b" />
 
 ## 2. App 2
