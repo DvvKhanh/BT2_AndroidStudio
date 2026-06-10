@@ -594,10 +594,20 @@ app
 ### Màn hình About
 - Hiển thị đúng thông tin sinh viên.
 - Các nút điều hướng hoạt động chính xác.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c29ab235-4a62-4746-9648-dc65eb65538c" />
 
 ### Màn hình Giải toán
-Nhập dữ liệu và giải phương trình thành công.
-Gửi dữ liệu lên API và nhận phản hồi từ Server.
-Màn hình WebView
-Tải thành công trang web.
-Hiển thị đúng mã sinh viên trên URL.
+- Nhập dữ liệu và giải phương trình thành công.
+- Gửi dữ liệu lên API và nhận phản hồi từ Server.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fe9dc6f5-4362-4012-bffb-4b95ad1ae486" />
+
+### Màn hình WebView
+- Tải thành công trang web.
+- Hiển thị đúng mã sinh viên trên URL.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ec2f51a9-cf05-4037-a2dc-f3f8c7dfd341" />
+
+- Activity 3 – WebView: Sử dụng WebView để truy cập và hiển thị trang web https://k58kmt.tdh.io.vn?masv=K225480106099
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/49dd0432-85ab-4c99-85a4-eef13c11f669" />
+
+### Gửi dữ liệu lên API: https://k58kmt.tdh.io.vn/
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e709461a-3e11-417d-bb4a-61e3ea3ee0a6" />
