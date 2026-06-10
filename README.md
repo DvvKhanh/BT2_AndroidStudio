@@ -380,15 +380,6 @@ getAssets().open("guide/android.txt");
   + App hướng dẫn sử dụng.
   + App tra cứu từ điển.
   + App đọc tài liệu offline.
-- Ví dụ: App hướng dẫn học Android
-```
-assets
- ├── activity.txt
- ├── intent.txt
- ├── service.txt
- └── broadcast.txt
-```
-- Ứng dụng đọc dữ liệu từ Assets và hiển thị cho người dùng mà không cần kết nối Internet.
 
 # Viết app sử dụng Android Studio
 ## 1. Tạo App 1
@@ -397,17 +388,17 @@ assets
 app
 │
 ├── assets
-│   └── android_lessons.json
+│   └── vietnam_heritages.json
 │
 ├── java
 │   ├── MainActivity.java
-│   ├── Lesson.java
-│   └── LessonAdapter.java
+│   ├── Heritage.java
+│   └── HeritageAdapter.java
 │
 └── res
     └── layout
         ├── activity_main.xml
-        └── item_lesson.xml
+        └── item_heritage.xml
 ```
 ## Tạo project mới trong Android Studio.
 - Trong Android Studio chọn File -> New -> chọn New Project -> Empty Views Activity -> Cấu hình project -> Finish
@@ -422,10 +413,10 @@ app
 <img width="626" height="409" alt="image" src="https://github.com/user-attachments/assets/1c99f077-acf5-4d28-a899-dfc5deb8c2fe" />
 
 - Tạo file JSON
-  + Chuột phải vào assets -> New -> File -> Đặt tên: android_lessons.json
+  + Chuột phải vào assets -> New -> File -> Đặt tên: vietnam_heritages.json
 <img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/732405f0-566b-4036-a7e7-63ab386790ac" />
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/85923844-63ad-4106-bd7c-e5152642ddfa" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d84f5e55-33b3-4341-b7f3-6b7668a7880a" />
 
 ## Thiết kế giao diện chính
 - Mở res -> layout -> activity_main.xml
@@ -441,44 +432,38 @@ app
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 ```
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4ab69254-97f8-46d6-82bb-72c625cab294" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/17eaed3f-3744-414d-a578-860793adc2bb" />
 
 - Ý nghĩa: RecyclerView sẽ hiển thị danh sách bài học.
 
-## Tạo class lesson
+## Tạo class Heritage
 - Chuột phải package: java -> com.example.androidguideapp
 - Chuột phải vào com.example.androidguideapp -> new -> Java Class
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/27b9b5b7-2d7d-4aa4-b805-74499c1d2dbb" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/14dabb28-a586-4d0d-b53f-bf961292a4ca" />
 
 - Mục đích:
-  + Tạo đối tượng lưu dữ liệu của một bài học.
-  + Mỗi bài học gồm: title (tiêu đề) và content (nội dung).
-  + Dữ liệu được đọc từ file JSON trong Assets và lưu vào đối tượng Lesson.
+  + Lưu dữ liệu của một di sản.
+  + Mỗi di sản gồm: tiêu đề, danh mục, vị trí, nội dung
   
-## Tạo file item_lesson.xml
-- Mở res -> chuột phải vào layout -> new -> Layout Resource File -> Đặt tên
-<img width="574" height="237" alt="image" src="https://github.com/user-attachments/assets/e676bb03-ca14-466b-abc5-73f7667720ba" />
-
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8cc1f561-9f11-4ee3-b4d2-a4ba987d7090" />
+## Tạo file item_heritage.xml
+- Mở res -> chuột phải vào layout -> new -> Layout Resource File -> Đặt tên: item_heritage.xml
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b395f05-4e58-4737-8ea5-b83f7461f6d4" />
 
 - Mục đích:
-  + Thiết kế giao diện hiển thị cho một bài học.
-  + Bao gồm:
-    + txtTitle: hiển thị tiêu đề.
-    + txtContent: hiển thị nội dung
-  + Layout này sẽ được RecyclerView sử dụng để hiển thị từng dòng dữ liệu.
+  + Hiển thị một di sản.
+  + Bao gồm: Tên di sản, loại di sản, địa điểm, nút xem chi tiết.
 
 ## Tạo class LessonAdapter
 - Mở java -> chuột phải com.example.androidguideapp -> new -> Java Class
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d181eafc-c13e-4682-8e55-c0d713bfe8c2" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b0bab912-6ed7-4365-a19c-eaa0e8702413" />
 
 - Mục đích:
-  + Là cầu nối giữa dữ liệu (Lesson) và giao diện (item_lesson.xml).
-  + Nhận danh sách bài học từ file JSON.
-  + Đưa dữ liệu vào các TextView để hiển thị trên RecyclerView.
+  + Đọc dữ liệu từ danh sách Heritage.
+  + Hiển thị dữ liệu lên RecyclerView.
+  + Xử lý nút Xem chi tiết.
 
 ## Sửa file MainActivity.java
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ccf7ff53-8b35-4be4-9044-63dfeefac460" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9f6834b2-0f42-44d1-96bb-c33098afa4a6" />
 
 ## Tạo máy ảo Android (AVD)
 - Trên thanh menu chọn Tools -> Device Manager
