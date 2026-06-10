@@ -2,6 +2,9 @@
 # Sinh viên: Đậu Văn Khánh
 # MSSV: K225480106099
 # Lớp: K58KTP
+
+# VIẾT APP SỬ DỤNG ANDROID STUDIO
+
 ## 1. AndroidManifest.xml là gì?
 - Khái niệm: File AndroidManifest.xml là file cấu hình trung tâm của ứng dụng Android.
 - Nó dùng để mô tả:
