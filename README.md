@@ -451,7 +451,9 @@ app
 ```
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b3dc5697-08b0-4631-95f6-e94f99e4329a" />
 
-- Ý nghĩa: RecyclerView sẽ hiển thị danh sách bài học.
+- Ý nghĩa:
+  + RecyclerView dùng để hiển thị danh sách các di sản.
+  + Mỗi di sản sẽ được hiển thị dưới dạng Card.
 
 ## Tạo class Heritage
 - Chuột phải package: java -> com.example.androidguideapp
