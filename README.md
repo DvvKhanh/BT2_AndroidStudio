@@ -322,3 +322,179 @@ public void xuLyNut(View v)
 }
 ```
 - Cách này đơn giản nhưng ít được sử dụng trong các dự án lớn.
+
+## 12. Thư mục Assets trong Android
+### Khái niệm: Assets là thư mục đặc biệt dùng để lưu các tập tin dữ liệu đi kèm ứng dụng.
+### Vị trí:
+```
+app
+ └── src
+      └── main
+           └── assets
+```
+### Assets có thể chứa:
+- File TXT
+- File JSON
+- File HTML
+- Hình ảnh
+- Âm thanh
+- Video
+- PDF
+### Vai trò của Assets:
+- Khi ứng dụng được biên dịch (Build APK), toàn bộ dữ liệu trong thư mục Assets sẽ được đóng gói cùng ứng dụng.
+```
+Assets
+    ↓
+Build APK
+    ↓
+Đi theo ứng dụng
+```
+- Do đó dữ liệu luôn có sẵn trên thiết bị kể cả khi không có Internet.
+### Truy cập dữ liệu trong Assets:
+- Android sử dụng AssetManager để đọc dữ liệu từ Assets.
+- Ví dụ:
+```
+InputStream is =
+getAssets().open("data.txt");
+```
+- Nếu file nằm trong thư mục con:
+```
+assets
+ └── guide
+      └── android.txt
+```
+- Truy cập:
+```
+InputStream is =
+getAssets().open("guide/android.txt");
+```
+### Lợi ích của Assets:
+- Hoạt động được khi offline.
+- Dữ liệu luôn có sẵn trong ứng dụng.
+- Tốc độ truy xuất nhanh.
+- Không phụ thuộc Internet hoặc máy chủ.
+- Dễ triển khai và sử dụng.
+### Ứng dụng thực tế:
+- Assets thường được sử dụng trong:
+  + App học tập.
+  + App hướng dẫn sử dụng.
+  + App tra cứu từ điển.
+  + App đọc tài liệu offline.
+- Ví dụ: App hướng dẫn học Android
+```
+assets
+ ├── activity.txt
+ ├── intent.txt
+ ├── service.txt
+ └── broadcast.txt
+```
+- Ứng dụng đọc dữ liệu từ Assets và hiển thị cho người dùng mà không cần kết nối Internet.
+
+# Viết app sử dụng Android Studio
+## 1. Tạo App 1
+## Cấu trúc thư mục
+```
+app
+│
+├── assets
+│   └── android_lessons.json
+│
+├── java
+│   ├── MainActivity.java
+│   ├── Lesson.java
+│   └── LessonAdapter.java
+│
+└── res
+    └── layout
+        ├── activity_main.xml
+        └── item_lesson.xml
+```
+## Tạo project mới trong Android Studio.
+- Trong Android Studio chọn File -> New -> chọn New Project -> Empty Views Activity -> Cấu hình project -> Finish
+<img width="1129" height="809" alt="image" src="https://github.com/user-attachments/assets/8c82f7af-00ca-4365-8589-1aebe8045026" />
+
+## Tạo thư mục Assets
+- Nhìn bên trái mở app -> mở src -> main
+- Chuột phải main -> New -> Diretory -> assets
+<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/be63901b-382a-4754-a3c1-02631f733a39" />
+
+- Kết quả:
+<img width="626" height="409" alt="image" src="https://github.com/user-attachments/assets/1c99f077-acf5-4d28-a899-dfc5deb8c2fe" />
+
+- Tạo file JSON
+  + Chuột phải vào assets -> New -> File -> Đặt tên: android_lessons.json
+<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/732405f0-566b-4036-a7e7-63ab386790ac" />
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/85923844-63ad-4106-bd7c-e5152642ddfa" />
+
+## Thiết kế giao diện chính
+- Mở res -> layout -> activity_main.xml
+<img width="619" height="758" alt="image" src="https://github.com/user-attachments/assets/46c6c221-38b4-4637-931a-3f95a30d91dd" />
+
+- Xóa toàn bộ nội dung -> thêm nội dung:
+```
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4ab69254-97f8-46d6-82bb-72c625cab294" />
+
+- Ý nghĩa: RecyclerView sẽ hiển thị danh sách bài học.
+
+## Tạo class lesson
+- Chuột phải package: java -> com.example.androidguideapp
+- Chuột phải vào com.example.androidguideapp -> new -> Java Class
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/27b9b5b7-2d7d-4aa4-b805-74499c1d2dbb" />
+
+- Mục đích:
+  + Tạo đối tượng lưu dữ liệu của một bài học.
+  + Mỗi bài học gồm: title (tiêu đề) và content (nội dung).
+  + Dữ liệu được đọc từ file JSON trong Assets và lưu vào đối tượng Lesson.
+  
+## Tạo file item_lesson.xml
+- Mở res -> chuột phải vào layout -> new -> Layout Resource File -> Đặt tên
+<img width="574" height="237" alt="image" src="https://github.com/user-attachments/assets/e676bb03-ca14-466b-abc5-73f7667720ba" />
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8cc1f561-9f11-4ee3-b4d2-a4ba987d7090" />
+
+- Mục đích:
+  + Thiết kế giao diện hiển thị cho một bài học.
+  + Bao gồm:
+    + txtTitle: hiển thị tiêu đề.
+    + txtContent: hiển thị nội dung
+  + Layout này sẽ được RecyclerView sử dụng để hiển thị từng dòng dữ liệu.
+
+## Tạo class LessonAdapter
+- Mở java -> chuột phải com.example.androidguideapp -> new -> Java Class
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d181eafc-c13e-4682-8e55-c0d713bfe8c2" />
+
+- Mục đích:
+  + Là cầu nối giữa dữ liệu (Lesson) và giao diện (item_lesson.xml).
+  + Nhận danh sách bài học từ file JSON.
+  + Đưa dữ liệu vào các TextView để hiển thị trên RecyclerView.
+
+## Sửa file MainActivity.java
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ccf7ff53-8b35-4be4-9044-63dfeefac460" />
+
+## Tạo máy ảo Android (AVD)
+- Trên thanh menu chọn Tools -> Device Manager
+- Cửa sổ Device Manager sẽ mở bên phải.
+<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/cb1c4be7-892c-45f6-8544-f1bdc4d43a6d" />
+
+- Bấm + Create Device -> chọn Phone -> Pixel 6 -> Next
+<img width="1126" height="851" alt="image" src="https://github.com/user-attachments/assets/179b4229-cefc-4e12-82dd-98e1362f8fb1" />
+
+- Chọn API 35 -> Finish
+<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/c6fc2eb2-1014-498d-a533-66c4fea20a70" />
+
+## Kết quả
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8a910480-565e-42cf-ad59-ed8b08a9c257" />
+
+- Nhấn vào xem chi tiết sẽ hiện nội dung đầy đủ
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/1064fcf5-6991-4be6-b9a2-a0b75839fe3c" />
+
+## 2. App 2
