@@ -382,7 +382,7 @@ getAssets().open("guide/android.txt");
   + App đọc tài liệu offline.
 
 # Viết app sử dụng Android Studio
-## 1. Tạo App 1
+## 1. Tạo App 1 - Sử dụng cơ chế dữ liệu chuẩn bị trước trong Assets
 ## Cấu trúc thư mục
 ```
 app
@@ -501,4 +501,103 @@ app
 - Nhấn vào xem chi tiết sẽ hiện nội dung đầy đủ
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a453be18-7f38-4594-ba1f-222d76438977" />
 
-## 2. App 2
+## 2. Tạo App 2 - Tạo app tương đương với Mit App inventor
+### Yêu cầu:
+- Ứng dụng gồm 3 Activity
+```
+| Activity  | Chức năng                                      |
+| --------- | ---------------------------------------------- |
+| Activity1 | About + nút chuyển sang Activity2 và Activity3 |
+| Activity2 | Giải toán đơn giản + gửi kết quả lên API       |
+| Activity3 | WebView mở trang web theo MSSV                 |
+```
+### Tạo project mới:
+- Trong Android Studio chọn File -> New -> chọn New Project -> Empty Views Activity -> Cấu hình project -> Finish
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f0929a93-e839-4001-8882-cc5bda6f575e" />
+
+### Tạo thêm activity 2, 3
+- Mặc định có: MainActivity -> dùng làm Activity1.
+- Tạo Activity2:
+  + Trong cột Project: truy cập app -> kotlin + java -> com.example.app2
+  + Chuột phải vào package com.example.app2mitinventor → New → Activity → Empty Views Activity.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/22e17778-242a-420a-89bc-cf4dea688953" />
+
+- Tạo các Activity sau:
+  + AboutActivity
+  + MathActivity
+  + WebActivity
+<img width="693" height="537" alt="image" src="https://github.com/user-attachments/assets/8be8277f-a423-4325-b398-f5eab64db6a9" />
+
+```
+| Activity      | File Java          | Layout             | Mô tả                             |
+| ------------- | ------------------ | ------------------ | --------------------------------- |
+| AboutActivity | AboutActivity.java | activity_about.xml | Màn hình giới thiệu và điều hướng |
+| MathActivity  | MathActivity.java  | activity_math.xml  | Màn hình giải toán và gọi API     |
+| WebActivity   | WebActivity.java   | activity_web.xml   | Màn hình WebView hiển thị website |
+```
+
+### Cấu hình quyền Internet
+- Mở file: app → manifests → AndroidManifest.xml
+- Thêm quyền truy cập Internet:
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4e04b5e6-baf3-4aab-81b2-d4815accccaf" />
+
+### Thiết kế màn hình About (Activity 1)
+- Giao diện:
+  + Mở file: res → layout → activity_about.xml
+  + Thiết kế giao diện gồm:
+    + Tên ứng dụng.
+    + MSSV, họ tên sinh viên, môn học.
+    + Nút mở màn hình Giải toán.
+    + Nút mở màn hình WebView.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fa7952c4-3d6b-4689-a5ec-b2990458a192" />
+
+- Xử lý điều hướng:
+  + Mở file: AboutActivity.java
+  + Trong AboutActivity.java, sử dụng Intent để chuyển sang: MathActivity và WebActivity.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/da4c5a59-a445-4b40-b688-42e3936403eb" />
+
+### Xây dựng màn hình Giải toán và Gọi API (Activity 2)
+-Giao diện:
+  + Mở file: res → layout → activity_math.xml
+  + Thiết kế giao diện gồm:
+    + 3 ô nhập dữ liệu a, b, c.
+    + Nút "GIẢI TOÁN".
+    + TextView hiển thị kết quả.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/15563e9f-88a2-4074-a698-48f74a1f6091" />
+
+- Xử lý giải toán và gửi API:
+  + Mở file: MathActivity.java
+  + Trong MathActivity.java:
+    + Xử lý giải phương trình.
+    + Tạo dữ liệu JSON theo cấu trúc yêu cầu.
+    + Gửi dữ liệu đến API: https://k58kmt.tdh.io.vn/api
+    + Nhận phản hồi từ Server và hiển thị kết quả.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/512e4e44-f0ba-4469-80da-da61dded0d71" />
+
+### Xây dựng màn hình WebView
+- Giao diện:
+  + Mở file: res → layout → activity_web.xml
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/46fa353e-d6bc-4dec-88c2-963b26072539" />
+
+- Xử lý WebView:
+  + Mở file: WebActivity.java
+  + Trong WebActivity.java:
+    + Bật JavaScript.
+    + Tạo URL: https://k58kmt.tdh.io.vn?masv=K225480106099
+    + Sử dụng loadUrl() để hiển thị trang web trong ứng dụng.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/89a3f721-f43d-4746-9c4d-3915393318cd" />
+
+### Kiểm tra chương trình
+### Màn hình About
+- Hiển thị đúng thông tin sinh viên.
+- Các nút điều hướng hoạt động chính xác.
+
+### Màn hình Giải toán
+Nhập dữ liệu và giải phương trình thành công.
+Gửi dữ liệu lên API và nhận phản hồi từ Server.
+Màn hình WebView
+Tải thành công trang web.
+Hiển thị đúng mã sinh viên trên URL.
