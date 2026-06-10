@@ -552,12 +552,12 @@ app
     + MSSV, họ tên sinh viên, ngành học.
     + Nút mở màn hình Giải toán.
     + Nút mở màn hình WebView.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fa7952c4-3d6b-4689-a5ec-b2990458a192" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c107768e-2d3f-43c2-a5f5-836dd7ad5240" />
 
 - Xử lý điều hướng:
   + Mở file: AboutActivity.java
   + Trong AboutActivity.java, sử dụng Intent để chuyển sang: MathActivity và WebActivity.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/da4c5a59-a445-4b40-b688-42e3936403eb" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/afabcbbf-1e4a-438d-a6cf-32c2905fb71f" />
 
 ### Xây dựng màn hình Giải toán và Gọi API (Activity 2)
 -Giao diện:
@@ -566,7 +566,7 @@ app
     + 3 ô nhập dữ liệu a, b, c.
     + Nút "GIẢI TOÁN".
     + TextView hiển thị kết quả.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/15563e9f-88a2-4074-a698-48f74a1f6091" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/7837d107-2625-4839-bcbc-43bf46821c9f" />
 
 - Xử lý giải toán và gửi API:
   + Mở file: MathActivity.java
@@ -575,12 +575,12 @@ app
     + Tạo dữ liệu JSON theo cấu trúc yêu cầu.
     + Gửi dữ liệu đến API: https://k58kmt.tdh.io.vn/api
     + Nhận phản hồi từ Server và hiển thị kết quả.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/512e4e44-f0ba-4469-80da-da61dded0d71" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e20518f0-6d2a-416c-b4dc-5918ebcd21cf" />
 
 ### Xây dựng màn hình WebView
 - Giao diện:
   + Mở file: res → layout → activity_web.xml
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/46fa353e-d6bc-4dec-88c2-963b26072539" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f5b25f81-ffcb-4286-aac2-f65f930abd7c" />
 
 - Xử lý WebView:
   + Mở file: WebActivity.java
@@ -588,26 +588,26 @@ app
     + Bật JavaScript.
     + Tạo URL: https://k58kmt.tdh.io.vn?masv=K225480106099
     + Sử dụng loadUrl() để hiển thị trang web trong ứng dụng.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/89a3f721-f43d-4746-9c4d-3915393318cd" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/94373667-3356-402b-80aa-d7e73539cb60" />
 
 ### Kiểm tra chương trình
 ### Màn hình About
 - Hiển thị đúng thông tin sinh viên.
 - Các nút điều hướng hoạt động chính xác.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c29ab235-4a62-4746-9648-dc65eb65538c" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/80df80e7-bff2-47ea-af4b-c251199f7d2e" />
 
 ### Màn hình Giải toán
 - Nhập dữ liệu và giải phương trình thành công.
 - Gửi dữ liệu lên API và nhận phản hồi từ Server.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fe9dc6f5-4362-4012-bffb-4b95ad1ae486" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/79d5cc83-63d2-45ed-8476-2c006a38eaff" />
 
 ### Màn hình WebView
 - Tải thành công trang web.
 - Hiển thị đúng mã sinh viên trên URL.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ec2f51a9-cf05-4037-a2dc-f3f8c7dfd341" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c7a64610-341a-4f67-8f4e-4929e4ab20ae" />
 
 - Activity 3 – WebView: Sử dụng WebView để truy cập và hiển thị trang web https://k58kmt.tdh.io.vn?masv=K225480106099
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/49dd0432-85ab-4c99-85a4-eef13c11f669" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ade964b3-d97c-4504-bbfc-f7fe0784521c" />
 
 ### Gửi dữ liệu lên API: https://k58kmt.tdh.io.vn/
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e709461a-3e11-417d-bb4a-61e3ea3ee0a6" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/633cad1a-ff1d-4b8a-b4f8-65b74f16e7ab" />
