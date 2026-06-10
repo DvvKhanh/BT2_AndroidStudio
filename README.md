@@ -549,7 +549,7 @@ app
   + Mở file: res → layout → activity_about.xml
   + Thiết kế giao diện gồm:
     + Tên ứng dụng.
-    + MSSV, họ tên sinh viên, môn học.
+    + MSSV, họ tên sinh viên, ngành học.
     + Nút mở màn hình Giải toán.
     + Nút mở màn hình WebView.
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/fa7952c4-3d6b-4689-a5ec-b2990458a192" />
