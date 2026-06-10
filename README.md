@@ -515,9 +515,8 @@ app
 - Trong Android Studio chọn File -> New -> chọn New Project -> Empty Views Activity -> Cấu hình project -> Finish
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f0929a93-e839-4001-8882-cc5bda6f575e" />
 
-### Tạo thêm activity 2, 3
-- Mặc định có: MainActivity -> dùng làm Activity1.
-- Tạo Activity2:
+### Tạo thêm activity 1,2, 3
+- Tạo Activity:
   + Trong cột Project: truy cập app -> kotlin + java -> com.example.app2
   + Chuột phải vào package com.example.app2mitinventor → New → Activity → Empty Views Activity.
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/22e17778-242a-420a-89bc-cf4dea688953" />
