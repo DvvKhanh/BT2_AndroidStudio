@@ -426,13 +426,30 @@ app
 ```
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.recyclerview.widget.RecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recyclerView"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khám Phá Di Sản Việt Nam"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
 ```
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/17eaed3f-3744-414d-a578-860793adc2bb" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b3dc5697-08b0-4631-95f6-e94f99e4329a" />
 
 - Ý nghĩa: RecyclerView sẽ hiển thị danh sách bài học.
 
@@ -443,7 +460,7 @@ app
 
 - Mục đích:
   + Lưu dữ liệu của một di sản.
-  + Mỗi di sản gồm: tiêu đề, danh mục, vị trí, nội dung
+  + Mỗi di sản gồm: tiêu đề, danh mục, vị trí, nội dung.
   
 ## Tạo file item_heritage.xml
 - Mở res -> chuột phải vào layout -> new -> Layout Resource File -> Đặt tên: item_heritage.xml
@@ -453,7 +470,7 @@ app
   + Hiển thị một di sản.
   + Bao gồm: Tên di sản, loại di sản, địa điểm, nút xem chi tiết.
 
-## Tạo class LessonAdapter
+## Tạo class HeritageAdapter
 - Mở java -> chuột phải com.example.androidguideapp -> new -> Java Class
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b0bab912-6ed7-4365-a19c-eaa0e8702413" />
 
@@ -468,18 +485,18 @@ app
 ## Tạo máy ảo Android (AVD)
 - Trên thanh menu chọn Tools -> Device Manager
 - Cửa sổ Device Manager sẽ mở bên phải.
-<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/cb1c4be7-892c-45f6-8544-f1bdc4d43a6d" />
+<img width="1920" height="1200" alt="14" src="https://github.com/user-attachments/assets/c2143402-02b1-44f8-a1d9-1c11153f9403" />
 
 - Bấm + Create Device -> chọn Phone -> Pixel 6 -> Next
 <img width="1126" height="851" alt="image" src="https://github.com/user-attachments/assets/179b4229-cefc-4e12-82dd-98e1362f8fb1" />
 
 - Chọn API 35 -> Finish
-<img width="1920" height="1200" alt="13" src="https://github.com/user-attachments/assets/c6fc2eb2-1014-498d-a533-66c4fea20a70" />
+<img width="1100" height="879" alt="image" src="https://github.com/user-attachments/assets/ccbe4cef-b750-4ca4-bb82-6a27e0ef3fbc" />
 
 ## Kết quả
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8a910480-565e-42cf-ad59-ed8b08a9c257" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f553cf46-efc8-423b-b896-4cc1c80a1f08" />
 
 - Nhấn vào xem chi tiết sẽ hiện nội dung đầy đủ
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/03e057ab-5c93-4af9-b821-8877a8573d7b" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a453be18-7f38-4594-ba1f-222d76438977" />
 
 ## 2. App 2
